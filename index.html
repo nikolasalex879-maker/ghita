@@ -3,158 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Service Auto Rapid</title>
+<title>GHITA Pizza</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{background:#fafafa;color:#222}
 
-body {
-    background: #f4f4f4;
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 40px;background:#2a9d8f;color:#fff
 }
+nav h1{font-size:26px}
+nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:500}
 
-/* NAVBAR */
-nav {
-    background: #111;
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
+.hero{
+height:85vh;
+background:url('https://images.unsplash.com/photo-1513104890138-7c749659a591') center/cover;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+color:white;text-align:center
 }
+.hero h2{font-size:60px}
+.hero button{margin-top:20px;padding:12px 30px;background:#e76f51;border:none;color:white;border-radius:8px;cursor:pointer}
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-}
+section{padding:60px 20px;text-align:center}
 
-/* HERO */
-.hero {
-    height: 80vh;
-    background: url("https://images.unsplash.com/photo-1515923162033-7f1f9d3e3b4d") center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
+.cards{display:flex;flex-wrap:wrap;gap:25px;justify-content:center}
+.card{background:white;padding:20px;border-radius:12px;width:260px;box-shadow:0 10px 20px rgba(0,0,0,0.1);transition:.3s}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%;border-radius:10px}
+.card button{margin-top:10px;background:#2a9d8f;color:white;border:none;padding:10px;border-radius:6px;cursor:pointer}
 
-.hero h1 {
-    font-size: 50px;
-}
+.about{background:#e9f5f2}
+.contact{background:#264653;color:white}
+input{padding:12px;margin:10px;width:250px;border:none;border-radius:6px}
 
-/* SERVICII */
-.servicii {
-    padding: 40px;
-    text-align: center;
-}
+footer{background:#1d3557;color:white;text-align:center;padding:20px}
 
-.cards {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* CONTACT */
-.contact {
-    background: #222;
-    color: white;
-    padding: 40px;
-    text-align: center;
-}
-
-input, textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px;
-}
-
-/* BUTON */
-button {
-    padding: 10px 20px;
-    border: none;
-    background: red;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background: darkred;
-}
+.hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-    <h2>AutoFix</h2>
-    <div>
-        <a href="#">Acasă</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#contact">Contact</a>
-    </div>
+<h1>GHITA Pizza</h1>
+<div>
+<a href="#" onclick="showPage('home')">Acasă</a>
+<a href="#" onclick="showPage('menu')">Meniu</a>
+<a href="#" onclick="showPage('about')">Despre</a>
+<a href="#" onclick="showPage('contact')">Contact</a>
+<a href="#" onclick="showPage('order')">Comandă</a>
+</div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1>Service Auto Profesional</h1>
-        <p>Reparații rapide și de încredere</p>
-        <button onclick="alert('Programare trimisă!')">Programează-te</button>
-    </div>
+<!-- HOME -->
+<section id="home" class="page">
+<div class="hero">
+<h2>GHITA Pizza</h2>
+<p>Gust autentic, livrat rapid 🍕</p>
+<button onclick="showPage('menu')">Vezi meniul</button>
+</div>
 </section>
 
-<!-- SERVICII -->
-<section class="servicii" id="servicii">
-    <h2>Serviciile noastre</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Diagnoză</h3>
-            <p>Verificare completă computerizată</p>
-        </div>
-        <div class="card">
-            <h3>Revizie</h3>
-            <p>Schimb ulei + filtre</p>
-        </div>
-        <div class="card">
-            <h3>Frâne</h3>
-            <p>Plăcuțe și discuri</p>
-        </div>
-    </div>
+<!-- MENU -->
+<section id="menu" class="page hidden">
+<h2>Meniu</h2>
+<div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65"><h3>Margherita</h3><p>25 RON</p><button onclick="addToCart('Margherita',25)">Adaugă</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1548365328-9f547fb0953c"><h3>Quattro Formaggi</h3><p>32 RON</p><button onclick="addToCart('Quattro',32)">Adaugă</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1601924928587-79f0b0dba6c4"><h3>Diavola</h3><p>30 RON</p><button onclick="addToCart('Diavola',30)">Adaugă</button></div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page hidden about">
+<h2>Despre GHITA Pizza</h2>
+<p>Inspirată din stilul modern de pizzerii premium, GHITA Pizza oferă ingrediente proaspete și livrare rapidă.</p>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Contact</h2>
-    <input type="text" placeholder="Nume">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Mesaj"></textarea>
-    <br>
-    <button onclick="trimiteMesaj()">Trimite</button>
+<section id="contact" class="page hidden contact">
+<h2>Contact</h2>
+<input placeholder="Nume"><br>
+<input placeholder="Telefon"><br>
+<input placeholder="Adresă"><br>
+<button onclick="alert('Mesaj trimis!')">Trimite</button>
 </section>
 
+<!-- ORDER -->
+<section id="order" class="page hidden">
+<h2>Coșul tău</h2>
+<ul id="cart"></ul>
+<h3>Total: <span id="total">0</span> RON</h3>
+<button onclick="placeOrder()">Finalizează comanda</button>
+</section>
+
+<footer>
+<p>© 2026 GHITA Pizza</p>
+</footer>
+
 <script>
-function trimiteMesaj() {
-    alert("Mesaj trimis cu succes!");
+let cart=[];
+let total=0;
+
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+}
+
+function addToCart(name,price){
+cart.push({name,price});
+total+=price;
+updateCart();
+alert(name+' adăugat!');
+}
+
+function updateCart(){
+let list=document.getElementById('cart');
+list.innerHTML='';
+cart.forEach(i=>{
+let li=document.createElement('li');
+li.textContent=i.name+' - '+i.price+' RON';
+list.appendChild(li);
+});
+document.getElementById('total').textContent=total;
+}
+
+function placeOrder(){
+if(cart.length===0){alert('Coș gol!');return}
+alert('Comanda a fost plasată!');
+cart=[];total=0;updateCart();
 }
 </script>
 
