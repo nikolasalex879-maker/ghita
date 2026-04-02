@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Auto Rapid</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* NAVBAR */
+nav {
+    background: #111;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: url("https://images.unsplash.com/photo-1515923162033-7f1f9d3e3b4d") center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+/* SERVICII */
+.servicii {
+    padding: 40px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact {
+    background: #222;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* BUTON */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkred;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>AutoFix</h2>
+    <div>
+        <a href="#">Acasă</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Service Auto Profesional</h1>
+        <p>Reparații rapide și de încredere</p>
+        <button onclick="alert('Programare trimisă!')">Programează-te</button>
+    </div>
+</section>
+
+<!-- SERVICII -->
+<section class="servicii" id="servicii">
+    <h2>Serviciile noastre</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Diagnoză</h3>
+            <p>Verificare completă computerizată</p>
+        </div>
+        <div class="card">
+            <h3>Revizie</h3>
+            <p>Schimb ulei + filtre</p>
+        </div>
+        <div class="card">
+            <h3>Frâne</h3>
+            <p>Plăcuțe și discuri</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact</h2>
+    <input type="text" placeholder="Nume">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Mesaj"></textarea>
+    <br>
+    <button onclick="trimiteMesaj()">Trimite</button>
+</section>
+
+<script>
+function trimiteMesaj() {
+    alert("Mesaj trimis cu succes!");
+}
+</script>
+
+</body>
+</html>
